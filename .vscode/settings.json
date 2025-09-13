@@ -36,4 +36,7 @@
     "editor.formatOnSave": true,
   },
   "terraform.experimentalFeatures.validateOnSave": true,
+  "files.associations": {
+    "*.tfvars*": "terraform-vars",
+  },
 }
