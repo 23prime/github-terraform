@@ -42,4 +42,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check Terraform
-        run: task tf:check
+        run: task tf:fmt:check
