@@ -75,3 +75,11 @@ tasks:
     desc: "Show Terraform version"
     cmds:
       - terraform version
+
+  import:repo:*:
+    desc: "Import existing repository"
+    dir: terraform
+    vars:
+      REPO_NAME: "{{index .MATCH 0}}"
+    cmds:
+      - terraform import 'github_repository.repositories["{{.REPO_NAME}}"]' {{.REPO_NAME}}
