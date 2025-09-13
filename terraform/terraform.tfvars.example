@@ -2,11 +2,11 @@
 # Copy this to terraform.tfvars and customize for your setup
 
 # Your GitHub username
-github_owner = "your-github-username"
+github_owner = "23prime"
 
 # Default settings for repositories
 default_branch     = "main"
-default_visibility = "public" # or "private"
+default_visibility = "public"
 
 # Repository features
 enable_issues      = true
@@ -16,8 +16,8 @@ enable_discussions = false
 
 # Merge settings
 delete_branch_on_merge = true
-allow_squash_merge     = true
-allow_merge_commit     = false
+allow_squash_merge     = false
+allow_merge_commit     = true
 allow_rebase_merge     = false
-allow_update_branch    = false
-allow_auto_merge       = false
+allow_update_branch    = true
+allow_auto_merge       = true
