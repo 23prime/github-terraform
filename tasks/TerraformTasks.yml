@@ -1,0 +1,77 @@
+version: "3"
+
+tasks:
+  check:
+    desc: "Check Terraform configuration"
+    dir: terraform
+    cmds:
+      - task: fix
+      - task: validate
+      - task: fmt:check
+
+  init:
+    desc: "Initialize Terraform"
+    dir: terraform
+    cmds:
+      - terraform init
+
+  plan:
+    desc: "Plan Terraform changes"
+    dir: terraform
+    cmds:
+      - terraform plan
+
+  apply:
+    desc: "Apply Terraform changes"
+    dir: terraform
+    cmds:
+      - terraform apply
+
+  destroy:
+    desc: "Destroy Terraform infrastructure"
+    dir: terraform
+    cmds:
+      - terraform destroy
+
+  validate:
+    desc: "Validate Terraform configuration"
+    dir: terraform
+    cmds:
+      - terraform validate
+
+  fmt:
+    desc: "Format Terraform files"
+    dir: terraform
+    cmds:
+      - terraform fmt -recursive
+    aliases:
+      - fix
+
+  fmt:check:
+    desc: "Check Terraform formatting"
+    dir: terraform
+    cmds:
+      - terraform fmt -check -recursive
+
+  workspace:
+    desc: "Show current workspace"
+    dir: terraform
+    cmds:
+      - terraform workspace show
+
+  output:
+    desc: "Show Terraform outputs"
+    dir: terraform
+    cmds:
+      - terraform output
+
+  state:
+    desc: "Show Terraform state"
+    dir: terraform
+    cmds:
+      - terraform state list
+
+  version:
+    desc: "Show Terraform version"
+    cmds:
+      - terraform version

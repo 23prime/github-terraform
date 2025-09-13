@@ -13,5 +13,8 @@ biome = "latest"
 actionlint = "latest"
 shellcheck = "latest"
 
+# Terraform
+terraform = "latest"
+
 # Others
 fzf = "latest"

@@ -25,4 +25,15 @@
 
   // Dictionary for spell checker
   "cSpell.words": ["shellcheck", "Taskfile"],
+
+  // Terraform
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+  },
+  "terraform.experimentalFeatures.validateOnSave": true,
 }
