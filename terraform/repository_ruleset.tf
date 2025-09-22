@@ -23,6 +23,15 @@ resource "github_repository_ruleset" "main_branch_protection" {
     }
   }
 
+  dynamic "bypass_actors" {
+    for_each = lookup(each.value, "deny_admin_bypass", false) ? [] : [1]
+    content {
+      actor_id    = 5 # admin
+      actor_type  = "RepositoryRole"
+      bypass_mode = "pull_request"
+    }
+  }
+
   rules {
     # Prevent force pushes
     non_fast_forward = true
