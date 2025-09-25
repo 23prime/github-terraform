@@ -9,6 +9,11 @@ locals {
       topics                   = ["terraform", "github", "automation"],
       auto_init                = false
       enable_branch_protection = true
+    },
+
+    "oeis-mcp-server-rs" = {
+      description = "Rust implementation of the OEIS MCP server"
+      topics      = ["rust", "oeis", "mcp"],
     }
   }
 }
