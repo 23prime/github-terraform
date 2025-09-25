@@ -28,7 +28,7 @@ resource "github_repository_ruleset" "main_branch_protection" {
     content {
       actor_id    = 5 # admin
       actor_type  = "RepositoryRole"
-      bypass_mode = "pull_request"
+      bypass_mode = "always"
     }
   }
 
