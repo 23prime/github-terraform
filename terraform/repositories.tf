@@ -15,6 +15,12 @@ locals {
       description = "Rust implementation of the OEIS MCP server"
       topics      = ["rust", "oeis", "mcp"],
     }
+
+    "23prime.xyz" = {
+      description = "Personal website"
+      topics      = ["website"],
+      auto_init   = false
+    }
   }
 }
 
