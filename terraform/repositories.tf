@@ -21,6 +21,12 @@ locals {
       topics      = ["website"],
       auto_init   = false
     }
+
+    "terraform-bootstrap-aws" = {
+      description = "Bootstrap AWS infrastructure with Terraform"
+      topics      = ["terraform", "aws"]
+      auto_init   = false
+    }
   }
 }
 
