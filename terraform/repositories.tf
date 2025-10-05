@@ -22,9 +22,9 @@ locals {
       auto_init   = false
     }
 
-    "terraform-bootstrap-aws" = {
-      description = "Bootstrap AWS infrastructure with Terraform"
-      topics      = ["terraform", "aws"]
+    "aws-tfstate-manager" = {
+      description = "Manage AWS S3 buckets for Terraform state files"
+      topics      = ["terraform", "aws", "s3"]
       auto_init   = false
     }
   }
