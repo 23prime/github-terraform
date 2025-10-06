@@ -17,9 +17,10 @@ locals {
     }
 
     "23prime.xyz" = {
-      description = "Personal website"
-      topics      = ["website"],
-      auto_init   = false
+      description  = "Personal website"
+      homepage_url = "https://23prime.xyz"
+      topics       = ["website"],
+      auto_init    = false
     }
 
     "aws-tfstate-manager" = {
