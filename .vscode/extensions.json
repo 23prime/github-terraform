@@ -6,7 +6,12 @@
     "GitHub.vscode-github-actions",
     "EditorConfig.EditorConfig",
     "DavidAnson.vscode-markdownlint",
+<<<<<<< HEAD
     "biomejs.biome",
     "HashiCorp.terraform",
   ],
+=======
+    "biomejs.biome"
+  ]
+>>>>>>> upstream/main
 }

@@ -7,6 +7,7 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 3
+<<<<<<< HEAD
     open-pull-requests-limit: 5
     commit-message:
       prefix: "deps"
@@ -18,6 +19,8 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 3
+=======
+>>>>>>> upstream/main
     open-pull-requests-limit: 5
     commit-message:
       prefix: "deps"
