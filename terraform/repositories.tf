@@ -28,6 +28,12 @@ locals {
       topics      = ["terraform", "aws", "s3"]
       auto_init   = false
     }
+
+    "vscode-multi-root-workspaces-example" = {
+      description = "Example of VS Code multi-root workspaces"
+      topics      = ["vscode", "example"]
+      auto_init   = false
+    }
   }
 }
 
