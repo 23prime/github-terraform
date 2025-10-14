@@ -30,9 +30,10 @@ locals {
     }
 
     "vscode-multi-root-workspaces-example" = {
-      description = "Example of VS Code multi-root workspaces"
-      topics      = ["vscode", "example"]
-      auto_init   = false
+      description  = "Example of VS Code multi-root workspaces"
+      homepage_url = "https://zenn.dev/23prime/articles/25fa0667cdc2a5"
+      topics       = ["vscode", "example"]
+      auto_init    = false
     }
   }
 }
