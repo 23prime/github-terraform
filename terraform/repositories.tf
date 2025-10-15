@@ -11,6 +11,12 @@ locals {
       enable_branch_protection = true
     },
 
+    "23prime" = {
+      description = "Personal GitHub profile"
+      topics      = ["profile", "github"],
+      auto_init   = false
+    },
+
     "oeis-mcp-server-rs" = {
       description = "Rust implementation of the OEIS MCP server"
       topics      = ["rust", "oeis", "mcp"],
