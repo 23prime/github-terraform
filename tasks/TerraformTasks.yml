@@ -1,11 +1,24 @@
 version: "3"
 
 tasks:
+  fix-and-check:
+    desc: "Fix and check Terraform configuration"
+    cmds:
+      - task: fix
+      - task: check
+  aliases:
+    - fc
+
+  fix:
+    desc: "Fix Terraform configuration"
+    dir: terraform
+    cmds:
+      - task: fmt
+
   check:
     desc: "Check Terraform configuration"
     dir: terraform
     cmds:
-      - task: fix
       - task: validate
       - task: fmt:check
 
@@ -44,8 +57,6 @@ tasks:
     dir: terraform
     cmds:
       - terraform fmt -recursive
-    aliases:
-      - fix
 
   fmt:check:
     desc: "Check Terraform formatting"
