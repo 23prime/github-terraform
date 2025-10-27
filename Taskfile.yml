@@ -52,5 +52,6 @@ tasks:
       - json:fix-and-check
       - md:fix-and-check
       - gh:check
+      - tf:fix-and-check
     aliases:
       - fc
