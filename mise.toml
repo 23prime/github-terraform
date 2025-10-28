@@ -15,7 +15,10 @@ shellcheck = "latest"
 
 # Other tools
 fzf = "latest"
+<<<<<<< HEAD
 
 # Terraform
 terraform = "latest"
+=======
+>>>>>>> upstream/main
 lefthook = "latest"
