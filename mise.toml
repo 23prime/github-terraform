@@ -15,7 +15,7 @@ shellcheck = "latest"
 
 # Other tools
 fzf = "latest"
+lefthook = "latest"
 
 # Terraform
 terraform = "latest"
-lefthook = "latest"
