@@ -41,6 +41,12 @@ locals {
       topics       = ["vscode", "example"]
       auto_init    = false
     }
+
+    "mf-web-tools" = {
+      description = "Tools for Money Forward Web"
+      topics      = ["chrome-extension"]
+      auto_init   = false
+    }
   }
 }
 
