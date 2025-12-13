@@ -28,6 +28,12 @@ tasks:
     cmds:
       - terraform init
 
+  init:upgrade:
+    desc: "Initialize Terraform with provider upgrade"
+    dir: terraform
+    cmds:
+      - terraform init -upgrade
+
   plan:
     desc: "Plan Terraform changes"
     dir: terraform
