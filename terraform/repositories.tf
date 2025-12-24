@@ -47,6 +47,12 @@ locals {
       topics      = ["chrome-extension"]
       auto_init   = false
     }
+
+    "claude-launcher" = {
+      description = "Launcher for Claude Code"
+      topics      = ["cli", "ai", "claude"]
+      auto_init   = false
+    }
   }
 }
 
