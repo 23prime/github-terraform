@@ -53,6 +53,164 @@ locals {
       topics      = ["cli", "ai", "claude"]
       auto_init   = false
     }
+
+    ".emacs.d" = {
+      description = "Settings for Emacs."
+      topics      = ["emacs", "emacs-lisp"]
+      auto_init   = false
+    }
+
+    "aws-lambda-functions-rs" = {
+      description = "AWS Lambda functions by Rust and Terraform."
+      topics      = ["aws", "lambda", "rust", "terrafo", "docker"]
+      auto_init   = false
+    }
+
+    "claude-config" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "codex-config" = {
+      description              = ""
+      topics                   = []
+      visibility               = "private"
+      auto_init                = false
+      enable_branch_protection = false
+    }
+
+    "danime-open-video-in-new-tab" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "dotfiles" = {
+      description = "Dot Files"
+      topics      = []
+      auto_init   = false
+    }
+
+    "elliptic-curve" = {
+      description = "Elliptic curve library for Haskell"
+      topics      = ["haskell", "elliptic-curves", "ellipse", "algebra"]
+      auto_init   = false
+    }
+
+    "gh-download" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "git-config" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "gokabot" = {
+      description = "Gokabot"
+      topics      = ["line", "line-bot", "ruby", "sinatra", "gokabou"]
+      auto_init   = false
+    }
+
+    "kdfj" = {
+      description = "Let's go to Kadofuji!"
+      topics      = ["ramen", "tsukuba"]
+      auto_init   = false
+    }
+
+    "latex-semantic-parser" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "mikutter_keyword_mute" = {
+      description = "keyword-mute plugin for mikutter"
+      topics      = ["ruby", "mikutter", "mikutter-plugin"]
+      auto_init   = false
+    }
+
+    "oeis2" = {
+      description = "Interface for Online Encyclopedia of Integer Sequences (OEIS)."
+      topics      = ["haskell", "oeis"]
+      auto_init   = false
+    }
+
+    "paper-template" = {
+      description = ""
+      topics      = ["latex-template", "latex"]
+      auto_init   = false
+    }
+
+    "proxy-terraform" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "scripts" = {
+      description = "Shell Scripts."
+      topics      = ["shell", "shell-script"]
+      auto_init   = false
+    }
+
+    "shell-scripts" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "simple-commit-and-push" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "simple-dependabot-auto-approve-and-merge" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "sync-upstream" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "taskfile-mise-template" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "vscode-snippets" = {
+      description = "My snippets for Visual Studio Code"
+      topics      = ["vscode", "snippets"]
+      auto_init   = false
+    }
+
+    "youtube-open-stream-thumbnail" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "youtube-open-stream-thumbnail-vue" = {
+      description = ""
+      topics      = []
+      auto_init   = false
+    }
+
+    "zed-config" = {
+      description = "Configuration for Zed editor"
+      topics      = []
+      auto_init   = false
+    }
   }
 }
 
