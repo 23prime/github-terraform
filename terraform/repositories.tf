@@ -62,7 +62,7 @@ locals {
 
     "aws-lambda-functions-rs" = {
       description = "AWS Lambda functions by Rust and Terraform."
-      topics      = ["aws", "lambda", "rust", "terrafo", "docker"]
+      topics      = ["aws", "lambda", "rust", "terraform", "docker"]
       auto_init   = false
     }
 
