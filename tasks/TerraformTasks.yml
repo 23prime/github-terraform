@@ -44,7 +44,7 @@ tasks:
     desc: "Apply Terraform changes"
     dir: terraform
     cmds:
-      - terraform apply
+      - terraform apply -auto-approve
 
   destroy:
     desc: "Destroy Terraform infrastructure"
