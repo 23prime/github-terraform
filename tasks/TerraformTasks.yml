@@ -44,7 +44,7 @@ tasks:
     desc: "Apply Terraform changes"
     dir: terraform
     cmds:
-      - terraform apply
+      - terraform apply -auto-approve
 
   destroy:
     desc: "Destroy Terraform infrastructure"
@@ -100,3 +100,14 @@ tasks:
       REPO_NAME: "{{index .MATCH 0}}"
     cmds:
       - terraform import 'github_repository.repositories["{{.REPO_NAME}}"]' {{.REPO_NAME}}
+
+  exclude:repo:*:
+    desc: "Exclude a repository from management"
+    dir: terraform
+    vars:
+      REPO_NAME: "{{index .MATCH 0}}"
+    cmds:
+      - terraform state rm 'github_repository.repositories["{{.REPO_NAME}}"]'
+      - terraform state rm 'github_repository_ruleset.main_branch_protection["{{.REPO_NAME}}"]'
+      - terraform state rm 'github_workflow_repository_permissions.workflow_repository_permissions["{{.REPO_NAME}}"]'
+      - terraform state rm 'github_actions_repository_permissions.actions_repository_permissions["{{.REPO_NAME}}"]'
