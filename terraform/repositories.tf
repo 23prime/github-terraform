@@ -211,6 +211,12 @@ locals {
       topics      = []
       auto_init   = false
     }
+
+    "md-section-numbers-checker" = {
+      description = "A tool to check section numbers in Markdown files"
+      topics      = ["markdown", "documentation", "tool"]
+      auto_init   = false
+    }
   }
 }
 
