@@ -67,9 +67,11 @@ locals {
     }
 
     "claude-config" = {
-      description = ""
-      topics      = []
-      auto_init   = false
+      description              = ""
+      topics                   = []
+      visibility               = "private"
+      auto_init                = false
+      enable_branch_protection = false
     }
 
     "codex-config" = {
