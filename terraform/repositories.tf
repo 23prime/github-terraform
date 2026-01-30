@@ -237,7 +237,6 @@ resource "github_repository" "repositories" {
   has_projects    = lookup(each.value, "has_projects", var.enable_projects)
   has_wiki        = lookup(each.value, "has_wiki", var.enable_wiki)
   has_discussions = lookup(each.value, "has_discussions", var.enable_discussions)
-  has_downloads   = lookup(each.value, "has_downloads", true)
 
   # Merge settings
   delete_branch_on_merge = lookup(each.value, "delete_branch_on_merge", var.delete_branch_on_merge)
