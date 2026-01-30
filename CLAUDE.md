@@ -89,12 +89,23 @@ The project uses `mise` for tool version management. Tools are defined in `mise.
 All Terraform configuration files are located in the `terraform/` directory:
 
 - `terraform/terraform.tf`: Terraform Cloud backend and provider configuration
-- `terraform/variables.tf`: Input variables for repository configuration
+- `terraform/variables.tf`: Input variables and default values for repository configuration
 - `terraform/main.tf`: GitHub provider setup and data sources
-- `terraform/repositories.tf`: Repository definitions and management
-- `terraform/repository_ruleset.tf`: Repository rules for main branch protection
+- `terraform/repositories.tf`: `local.repositories` definitions and `module "repository"` calls
 - `terraform/outputs.tf`: Terraform output values
 - `terraform/terraform.tfvars.example`: Example variables file
+
+### Repository Module (`terraform/modules/repository/`)
+
+Each repository is managed by a reusable module that bundles:
+
+- `main.tf`: `github_repository` resource
+- `ruleset.tf`: `github_repository_ruleset` resource (branch protection)
+- `permissions.tf`: `github_actions_repository_permissions` and `github_workflow_repository_permissions` resources
+- `variables.tf`: Module input variables (no defaults; all defaults are defined in root `variables.tf`)
+- `outputs.tf`: Module outputs
+
+Default values for all repository settings are centralized in the root `terraform/variables.tf`. Per-repository overrides are specified in the `local.repositories` config map in `terraform/repositories.tf`.
 
 ## Getting Started with Terraform
 
@@ -153,6 +164,7 @@ All repositories are automatically configured with:
 
 - Main branch protection using Repository Rules
 - Consistent merge settings
+- Actions and workflow permissions
 
 ## References
 

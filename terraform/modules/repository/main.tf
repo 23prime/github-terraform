@@ -20,10 +20,10 @@ resource "github_repository" "this" {
   allow_auto_merge       = lookup(var.config, "allow_auto_merge", var.allow_auto_merge)
 
   # Security
-  vulnerability_alerts = lookup(var.config, "vulnerability_alerts", true)
+  vulnerability_alerts = lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
 
   # Auto-initialize (only for new repositories)
-  auto_init          = lookup(var.config, "auto_init", true)
-  gitignore_template = lookup(var.config, "gitignore_template", null)
-  license_template   = lookup(var.config, "license_template", null)
+  auto_init          = lookup(var.config, "auto_init", var.auto_init)
+  gitignore_template = lookup(var.config, "gitignore_template", var.gitignore_template)
+  license_template   = lookup(var.config, "license_template", var.license_template)
 }

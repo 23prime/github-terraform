@@ -231,4 +231,27 @@ module "repository" {
   allow_rebase_merge     = var.allow_rebase_merge
   allow_update_branch    = var.allow_update_branch
   allow_auto_merge       = var.allow_auto_merge
+
+  # Security
+  vulnerability_alerts = var.vulnerability_alerts
+
+  # Auto-initialize
+  auto_init          = var.auto_init
+  gitignore_template = var.gitignore_template
+  license_template   = var.license_template
+
+  # Branch protection
+  enable_branch_protection        = var.enable_branch_protection
+  deny_admin_bypass               = var.deny_admin_bypass
+  dismiss_stale_reviews           = var.dismiss_stale_reviews
+  require_code_owner_reviews      = var.require_code_owner_reviews
+  required_approving_review_count = var.required_approving_review_count
+  require_last_push_approval      = var.require_last_push_approval
+  strict_status_checks            = var.strict_status_checks
+  require_linear_history          = var.require_linear_history
+
+  # Permissions
+  allowed_actions                  = var.allowed_actions
+  default_workflow_permissions     = var.default_workflow_permissions
+  can_approve_pull_request_reviews = var.can_approve_pull_request_reviews
 }
