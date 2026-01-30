@@ -74,14 +74,6 @@ locals {
       enable_branch_protection = false
     }
 
-    "codex-config" = {
-      description              = ""
-      topics                   = []
-      visibility               = "private"
-      auto_init                = false
-      enable_branch_protection = false
-    }
-
     "danime-open-video-in-new-tab" = {
       description = ""
       topics      = []
