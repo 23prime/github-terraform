@@ -11,13 +11,13 @@ output "github_user_info" {
 output "managed_repositories" {
   description = "List of managed repositories"
   value = [
-    for repo in github_repository.repositories : {
-      name          = repo.name
-      full_name     = repo.full_name
-      html_url      = repo.html_url
-      ssh_clone_url = repo.ssh_clone_url
-      git_clone_url = repo.git_clone_url
-      visibility    = repo.visibility
+    for key, mod in module.repository : {
+      name          = mod.repository.name
+      full_name     = mod.repository.full_name
+      html_url      = mod.repository.html_url
+      ssh_clone_url = mod.repository.ssh_clone_url
+      git_clone_url = mod.repository.git_clone_url
+      visibility    = mod.repository.visibility
     }
   ]
 }
