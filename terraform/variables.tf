@@ -10,12 +10,12 @@ variable "default_branch" {
   default     = "main"
 }
 
-variable "default_visibility" {
-  description = "Default visibility for repositories"
+variable "visibility" {
+  description = "Visibility for repositories by default"
   type        = string
   default     = "public"
   validation {
-    condition     = contains(["public", "private"], var.default_visibility)
+    condition     = contains(["public", "private"], var.visibility)
     error_message = "Visibility must be either 'public' or 'private'."
   }
 }

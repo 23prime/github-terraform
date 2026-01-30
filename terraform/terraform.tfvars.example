@@ -5,8 +5,8 @@
 github_owner = "23prime"
 
 # Default settings for repositories
-default_branch     = "main"
-default_visibility = "public"
+default_branch = "main"
+visibility     = "public"
 
 # Repository features
 enable_issues      = true

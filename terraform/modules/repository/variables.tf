@@ -13,8 +13,8 @@ variable "github_owner" {
   type        = string
 }
 
-variable "default_visibility" {
-  description = "Default visibility for repositories"
+variable "visibility" {
+  description = "Visibility for repositories by default"
   type        = string
 }
 

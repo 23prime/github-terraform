@@ -1,7 +1,7 @@
 resource "github_repository" "this" {
   name         = var.name
   description  = lookup(var.config, "description", "")
-  visibility   = lookup(var.config, "visibility", var.default_visibility)
+  visibility   = lookup(var.config, "visibility", var.visibility)
   homepage_url = lookup(var.config, "homepage_url", "https://github.com/${var.github_owner}/${var.name}")
   topics       = lookup(var.config, "topics", [])
 

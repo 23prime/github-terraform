@@ -220,7 +220,7 @@ module "repository" {
   config       = each.value
   github_owner = var.github_owner
 
-  default_visibility     = var.default_visibility
+  visibility             = var.visibility
   enable_issues          = var.enable_issues
   enable_projects        = var.enable_projects
   enable_wiki            = var.enable_wiki
