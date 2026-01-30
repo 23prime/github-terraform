@@ -26,4 +26,8 @@ resource "github_repository" "this" {
   auto_init          = lookup(var.config, "auto_init", var.auto_init)
   gitignore_template = lookup(var.config, "gitignore_template", var.gitignore_template)
   license_template   = lookup(var.config, "license_template", var.license_template)
+
+  lifecycle {
+    ignore_changes = [allow_forking]
+  }
 }
