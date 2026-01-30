@@ -28,10 +28,11 @@ resource "github_repository_ruleset" "main_branch_protection" {
 
     # Require pull request reviews
     pull_request {
-      dismiss_stale_reviews_on_push   = lookup(var.config, "dismiss_stale_reviews", var.dismiss_stale_reviews)
-      require_code_owner_review       = lookup(var.config, "require_code_owner_reviews", var.require_code_owner_reviews)
-      required_approving_review_count = lookup(var.config, "required_approving_review_count", var.required_approving_review_count)
-      require_last_push_approval      = lookup(var.config, "require_last_push_approval", var.require_last_push_approval)
+      dismiss_stale_reviews_on_push     = lookup(var.config, "dismiss_stale_reviews", var.dismiss_stale_reviews)
+      require_code_owner_review         = lookup(var.config, "require_code_owner_reviews", var.require_code_owner_reviews)
+      required_approving_review_count   = lookup(var.config, "required_approving_review_count", var.required_approving_review_count)
+      require_last_push_approval        = lookup(var.config, "require_last_push_approval", var.require_last_push_approval)
+      required_review_thread_resolution = lookup(var.config, "require_review_thread_resolution", var.require_review_thread_resolution)
     }
 
     # Require status checks to pass
@@ -45,7 +46,7 @@ resource "github_repository_ruleset" "main_branch_protection" {
     # Prevent deletion of the branch
     deletion = true
 
-    # Require conversation resolution
+    # Require linear history (no merge commits)
     required_linear_history = lookup(var.config, "require_linear_history", var.require_linear_history)
   }
 }

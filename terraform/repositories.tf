@@ -241,14 +241,15 @@ module "repository" {
   license_template   = var.license_template
 
   # Branch protection
-  enable_branch_protection        = var.enable_branch_protection
-  deny_admin_bypass               = var.deny_admin_bypass
-  dismiss_stale_reviews           = var.dismiss_stale_reviews
-  require_code_owner_reviews      = var.require_code_owner_reviews
-  required_approving_review_count = var.required_approving_review_count
-  require_last_push_approval      = var.require_last_push_approval
-  strict_status_checks            = var.strict_status_checks
-  require_linear_history          = var.require_linear_history
+  enable_branch_protection         = var.enable_branch_protection
+  deny_admin_bypass                = var.deny_admin_bypass
+  dismiss_stale_reviews            = var.dismiss_stale_reviews
+  require_code_owner_reviews       = var.require_code_owner_reviews
+  required_approving_review_count  = var.required_approving_review_count
+  require_last_push_approval       = var.require_last_push_approval
+  strict_status_checks             = var.strict_status_checks
+  require_review_thread_resolution = var.require_review_thread_resolution
+  require_linear_history           = var.require_linear_history
 
   # Permissions
   allowed_actions                  = var.allowed_actions

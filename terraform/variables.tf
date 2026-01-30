@@ -150,6 +150,12 @@ variable "strict_status_checks" {
   default     = false
 }
 
+variable "require_review_thread_resolution" {
+  description = "Require conversation resolution before merging by default"
+  type        = bool
+  default     = true
+}
+
 variable "require_linear_history" {
   description = "Require linear history by default"
   type        = bool
