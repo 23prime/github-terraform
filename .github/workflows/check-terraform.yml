@@ -12,6 +12,9 @@ on:
       - "terraform/**/*.tfvars"
       - ".github/workflows/check-terraform.yml"
 
+permissions:
+  contents: write
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -32,14 +35,16 @@ jobs:
           cache: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Initialize Terraform (without backend)
+        run: task tf:init:nobackend
+
       - name: Format Terraform
         run: task tf:fix
 
       - name: Commit and Push
-        uses: 23prime/simple-commit-and-push@v1
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit-message: "Auto format Terraform by `task tf:fix`"
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Auto fix by workflow"
 
       - name: Check Terraform
-        run: task tf:fmt:check
+        run: task tf:check
