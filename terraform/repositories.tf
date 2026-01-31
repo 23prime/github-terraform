@@ -58,6 +58,10 @@ locals {
       auto_init   = false
     }
 
+    "agent-skills" = {
+      auto_init = false
+    }
+
     "aws-lambda-functions-rs" = {
       description = "AWS Lambda functions by Rust and Terraform."
       topics      = ["aws", "lambda", "rust", "terraform", "docker"]
