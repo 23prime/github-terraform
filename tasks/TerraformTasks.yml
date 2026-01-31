@@ -28,6 +28,12 @@ tasks:
     cmds:
       - terraform init
 
+  init:nobackend:
+    desc: "Initialize Terraform without backend"
+    dir: terraform
+    cmds:
+      - terraform init -backend=false
+
   init:upgrade:
     desc: "Initialize Terraform with provider upgrade"
     dir: terraform
