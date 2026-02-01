@@ -76,6 +76,12 @@ locals {
       enable_branch_protection = false
     }
 
+    "copier-template" = {
+      description = "Copier template for general projects."
+      topics      = ["copier", "template"]
+      auto_init   = false
+    }
+
     "danime-open-video-in-new-tab" = {
       description = ""
       topics      = []
