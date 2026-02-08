@@ -82,6 +82,12 @@ locals {
       auto_init   = false
     }
 
+    "dot-config" = {
+      description = "Configuration files at `~/.config`."
+      topics      = []
+      auto_init   = false
+    }
+
     "danime-open-video-in-new-tab" = {
       description = ""
       topics      = []
