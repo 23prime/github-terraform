@@ -190,7 +190,7 @@ locals {
       auto_init   = false
     }
 
-    "taskfile-mise-template" = {
+    "mise-template" = {
       description = ""
       topics      = []
       auto_init   = false
