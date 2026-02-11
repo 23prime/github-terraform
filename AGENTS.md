@@ -79,7 +79,7 @@ The project uses `mise` for tool version management. Tools are defined in `mise.
 
 ## Configuration Files
 
-- `.markdownlint.yml`: markdownlint configuration
+- `.markdownlint-cli2.jsonc`: markdownlint-cli2 configuration
 - `.editorconfig`: Editor configuration
 
 ## Terraform Structure
