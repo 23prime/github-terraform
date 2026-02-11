@@ -13,83 +13,73 @@ This file provides guidance to AI coding agents when working with code in this r
 
 ## Project Overview
 
-This is a GitHub Terraform configuration management repository that uses Infrastructure as Code (IaC) to manage GitHub repositories, settings, and configurations. The project uses a Task-based architecture for development workflow and Terraform Cloud for state management.
+This is a GitHub Terraform configuration management repository that uses Infrastructure as Code (IaC) to manage GitHub repositories, settings, and configurations. The project uses mise for both tool management and task running, and Terraform Cloud for state management.
 
 ## Architecture
 
-The project uses a modular Task architecture with the main `Taskfile.yml` including specialized task files from the `tasks/` directory:
+The project uses `mise.toml` for tool version management and task definitions. All tasks are defined in `mise.toml` using the TOML task format.
 
-- **MiseTasks.yml**: Tool management and setup
-- **YamlTasks.yml**: YAML linting and validation
-- **JsonTasks.yml**: JSON formatting and linting using Biome
-- **MarkdownTasks.yml**: Markdown linting with auto-fix capabilities
-- **GitHubTasks.yml**: GitHub Actions workflow validation
-- **TerraformTasks.yml**: Terraform operations (init, plan, apply, validate, format)
+Task categories:
+
+- **Global**: `setup`, `fix`, `check`, `fix-and-check`
+- **Markdown**: `md-fix`, `md-check`
+- **GitHub Actions**: `gh-check`
+- **Terraform**: `tf-init`, `tf-plan`, `tf-apply`, `tf-validate`, `tf-fmt`, `tf-check`, etc.
 
 ## Development Commands
 
 ### Setup
 
 ```bash
-task setup    # Setup project and install tools via mise
+mise run setup    # Setup project and install tools via mise
 # or
-task s       # Alias for setup
+mise run s       # Alias for setup
 ```
 
 ### Common Development Tasks
 
 ```bash
-task                    # Show default tasks and versions
-task list              # List all available tasks
-task select-run        # Interactive task selection with fzf
-task sr               # Alias for select-run
-task check            # Run all checks (YAML, JSON, Markdown, GitHub Actions, Terraform)
-task c                # Alias for check
+mise tasks              # List all available tasks
+mise run check          # Run all checks (Markdown, GitHub Actions, Terraform)
+mise run c              # Alias for check
+mise run fix            # Fix all issues (Markdown, Terraform formatting)
+mise run f              # Alias for fix
+mise run fix-and-check  # Fix all issues and then check
+mise run fc             # Alias for fix-and-check
 ```
 
 ### Individual Linting/Formatting
 
 ```bash
-# YAML
-task yml:lint         # Lint YAML files with yamllint
-
-# JSON
-task json:fmt         # Format JSON files with Biome
-task json:lint        # Lint JSON files with Biome
-
 # Markdown
-task md:lint          # Lint Markdown files
-task md:fix           # Auto-fix Markdown issues
+mise run md-check     # Check for Markdown issues
+mise run md-fix       # Auto-fix Markdown issues
 
 # GitHub Actions
-task gh:validate-workflow  # Validate GitHub Actions workflows with actionlint
+mise run gh-check     # Validate GitHub Actions workflows with actionlint
 
 # Terraform
-task tf:init              # Initialize Terraform
-task tf:plan              # Plan Terraform changes
-task tf:apply             # Apply Terraform changes
-task tf:validate          # Validate Terraform configuration
-task tf:fmt               # Format Terraform files
-task tf:check             # Run all Terraform checks (validate + format check)
-task tf:import:repo:REPO  # Import existing repository (e.g., task tf:import:repo:my-repo)
+mise run tf-init              # Initialize Terraform
+mise run tf-plan              # Plan Terraform changes
+mise run tf-apply             # Apply Terraform changes
+mise run tf-validate          # Validate Terraform configuration
+mise run tf-fmt               # Format Terraform files
+mise run tf-check             # Run all Terraform checks (validate + format check)
+mise run tf-import-repo REPO  # Import existing repository (e.g., mise run tf-import-repo my-repo)
 ```
 
 ## Tool Management
 
 The project uses `mise` for tool version management. Tools are defined in `mise.toml`:
 
-- yamllint (YAML linting)
-- markdownlint-cli (Markdown linting)
-- biome (JSON formatting/linting)
+- markdownlint-cli2 (Markdown linting)
 - actionlint (GitHub Actions validation)
 - shellcheck (shell script validation)
 - terraform (Infrastructure as Code)
-- fzf (fuzzy finder for task selection)
+- lefthook (git hooks)
 
 ## Configuration Files
 
-- `biome.jsonc`: Biome configuration for JSON formatting (120 char line width, space indentation)
-- `.yamllint.yml`: yamllint configuration
 - `.markdownlint.yml`: markdownlint configuration
 - `.editorconfig`: Editor configuration
 
@@ -121,7 +111,7 @@ Default values for all repository settings are centralized in the root `terrafor
 1. **Setup Tools**:
 
    ```bash
-   task setup    # Install required tools via mise
+   mise run setup    # Install required tools via mise
    ```
 
 2. **Setup Terraform Cloud**:
@@ -138,7 +128,7 @@ Default values for all repository settings are centralized in the root `terrafor
 4. **Initialize Terraform**:
 
    ```bash
-   task tf:init    # This creates the workspace automatically
+   mise run tf-init    # This creates the workspace automatically
    ```
 
 5. **Setup GitHub Token**:
@@ -159,15 +149,15 @@ Default values for all repository settings are centralized in the root `terrafor
 8. **Deploy**:
 
    ```bash
-   task tf:plan     # Preview changes
-   task tf:apply    # Apply changes
+   mise run tf-plan     # Preview changes
+   mise run tf-apply    # Apply changes
    ```
 
 ## Repository Management
 
 - **Add Repository**: Add entry to `terraform/repositories.tf`
 - **Modify Settings**: Update repository configuration in the same file
-- **Apply Changes**: Run `task tf:plan` then `task tf:apply`
+- **Apply Changes**: Run `mise run tf-plan` then `mise run tf-apply`
 
 All repositories are automatically configured with:
 
@@ -183,9 +173,8 @@ All repositories are automatically configured with:
 
 GitHub Actions workflows in `.github/workflows/` handle:
 
-- YAML validation
-- JSON formatting/linting checks
 - Markdown linting
 - GitHub workflow validation
+- Terraform validation and formatting
 - Dependabot auto-approval and merging
 - Upstream synchronization

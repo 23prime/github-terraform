@@ -55,8 +55,8 @@ Only include fields that differ from the root variable defaults. For example, om
 ### 4. Fix and Check
 
 ```bash
-task tf:fix
-task tf:check
+mise run tf-fmt
+mise run tf-check
 ```
 
 If validation fails, fix the issue and retry.
@@ -86,14 +86,14 @@ Tell the user the PR has been created and share the URL. Ask them to review and 
 Once the user confirms:
 
 ```bash
-task tf:init
-task tf:plan
+mise run tf-init
+mise run tf-plan
 ```
 
 Show the plan output to the user. If the user approves:
 
 ```bash
-task tf:apply
+mise run tf-apply
 ```
 
 ### 8. Clean up

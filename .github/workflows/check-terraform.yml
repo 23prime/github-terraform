@@ -22,11 +22,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Install Task
-        uses: arduino/setup-task@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Install mise and setup
         uses: jdx/mise-action@v3
         with:
@@ -36,10 +31,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Initialize Terraform (without backend)
-        run: task tf:init:nobackend
+        run: mise run tf-init-nobackend
 
       - name: Format Terraform
-        run: task tf:fix
+        run: mise run tf-fmt
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v7
@@ -47,4 +42,4 @@ jobs:
           commit_message: "Auto fix by workflow"
 
       - name: Check Terraform
-        run: task tf:check
+        run: mise run tf-check
