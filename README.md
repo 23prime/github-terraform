@@ -12,24 +12,25 @@ Infrastructure as Code (IaC) repository for managing GitHub repositories, settin
    task setup
    ```
 
-2. **Setup Terraform Cloud**
-   - Create account at [Terraform Cloud](https://app.terraform.io)
-   - Create organization
-   - Update `terraform/terraform.tf` with your organization name
+1. **Setup Terraform Cloud**
 
-3. **Terraform Login**
+- Create account at [Terraform Cloud](https://app.terraform.io)
+- Create organization
+- Update `terraform/terraform.tf` with your organization name
+
+1. **Terraform Login**
 
    ```bash
    terraform login    # Authenticate with Terraform Cloud
    ```
 
-4. **Initialize Terraform**
+2. **Initialize Terraform**
 
    ```bash
    task tf:init    # This creates the workspace automatically
    ```
 
-5. **Setup GitHub Token**
+3. **Setup GitHub Token**
    - Go to [GitHub / Fine-grained personal access tokens](https://github.com/settings/personal-access-tokens)
    - Create GitHub Personal Access Token with `repo` permissions
    - Go to [Terraform Cloud / Your Workspace / Variables](https://app.terraform.io/app/23prime/workspaces/github-management/variables)
