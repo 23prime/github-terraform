@@ -24,7 +24,7 @@ Task categories:
 - **Global**: `setup`, `fix`, `check`, `fix-and-check`
 - **Markdown**: `md-fix`, `md-check`
 - **GitHub Actions**: `gh-check`
-- **Terraform**: `tf-init`, `tf-plan`, `tf-apply`, `tf-validate`, `tf-fmt`, `tf-check`, etc.
+- **Terraform**: `tf-init`, `tf-plan`, `tf-apply`, `tf-fix`, `tf-check`, etc.
 
 ## Development Commands
 
@@ -62,8 +62,7 @@ mise run gh-check     # Validate GitHub Actions workflows with actionlint
 mise run tf-init              # Initialize Terraform
 mise run tf-plan              # Plan Terraform changes
 mise run tf-apply             # Apply Terraform changes
-mise run tf-validate          # Validate Terraform configuration
-mise run tf-fmt               # Format Terraform files
+mise run tf-fix               # Format Terraform files
 mise run tf-check             # Run all Terraform checks (validate + format check)
 mise run tf-import-repo REPO  # Import existing repository (e.g., mise run tf-import-repo my-repo)
 ```

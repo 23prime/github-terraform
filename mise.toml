@@ -29,7 +29,7 @@ alias = "s"
 
 [tasks.fix]
 description = "Fix all issues"
-depends = ["md-fix", "tf-fmt"]
+depends = ["md-fix", "tf-fix"]
 alias = "f"
 
 [tasks.check]
@@ -93,7 +93,7 @@ description = "Destroy Terraform infrastructure"
 run = "terraform destroy"
 dir = "terraform"
 
-[tasks.tf-fmt]
+[tasks.tf-fix]
 description = "Format Terraform files"
 run = "terraform fmt -recursive"
 dir = "terraform"

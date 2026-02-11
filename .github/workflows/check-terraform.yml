@@ -34,7 +34,7 @@ jobs:
         run: mise run tf-init-nobackend
 
       - name: Format Terraform
-        run: mise run tf-fmt
+        run: mise run tf-fix
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@v7

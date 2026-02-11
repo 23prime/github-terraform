@@ -55,7 +55,7 @@ Only include fields that differ from the root variable defaults. For example, om
 ### 4. Fix and Check
 
 ```bash
-mise run tf-fmt
+mise run tf-fix
 mise run tf-check
 ```
 
