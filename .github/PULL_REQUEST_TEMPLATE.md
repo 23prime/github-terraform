@@ -1,4 +1,4 @@
-# Title
+<!-- markdownlint-disable MD041 -->
 
 ## Checklist
 
@@ -9,7 +9,7 @@
 
 ### After Approval
 
-- [ ] `task tf:apply` has succeeded
+- [ ] `mise run tf-apply` has succeeded
 
 ## Summary
 

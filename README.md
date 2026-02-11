@@ -9,13 +9,14 @@ Infrastructure as Code (IaC) repository for managing GitHub repositories, settin
 1. **Setup Tools**
 
    ```bash
-   task setup
+   mise run setup
    ```
 
 2. **Setup Terraform Cloud**
-   - Create account at [Terraform Cloud](https://app.terraform.io)
-   - Create organization
-   - Update `terraform/terraform.tf` with your organization name
+
+    - Create account at [Terraform Cloud](https://app.terraform.io)
+    - Create organization
+    - Update `terraform/terraform.tf` with your organization name
 
 3. **Terraform Login**
 
@@ -26,7 +27,7 @@ Infrastructure as Code (IaC) repository for managing GitHub repositories, settin
 4. **Initialize Terraform**
 
    ```bash
-   task tf:init    # This creates the workspace automatically
+   mise run tf-init    # This creates the workspace automatically
    ```
 
 5. **Setup GitHub Token**
@@ -62,13 +63,13 @@ Infrastructure as Code (IaC) repository for managing GitHub repositories, settin
 
 ```bash
 # Preview changes
-task tf:plan
+mise run tf-plan
 
 # Apply changes
-task tf:apply
+mise run tf-apply
 
 # Check all (includes Terraform validation)
-task check
+mise run check
 ```
 
 ### Repository Management
@@ -77,7 +78,7 @@ task check
 
 - **Add Repository**: Add entry to `terraform/repositories.tf`
 - **Modify Settings**: Update repository configuration in the same file
-- **Apply Changes**: Run `task tf:plan` then `task tf:apply`
+- **Apply Changes**: Run `mise run tf-plan` then `mise run tf-apply`
 
 #### Importing Existing Repositories
 
@@ -97,7 +98,7 @@ To manage existing GitHub repositories with Terraform:
 2. **Import Repository**
 
    ```bash
-   task tf:import:repo:existing-repo
+   mise run tf-import-repo existing-repo
    ```
 
 3. **Import Labels (if needed)**
@@ -118,8 +119,8 @@ To manage existing GitHub repositories with Terraform:
 5. **Verify and Apply**
 
    ```bash
-   task tf:plan    # Should show no changes if import was successful
-   task tf:apply   # Apply any additional configurations
+   mise run tf-plan    # Should show no changes if import was successful
+   mise run tf-apply   # Apply any additional configurations
    ```
 
 All repositories are automatically configured with:

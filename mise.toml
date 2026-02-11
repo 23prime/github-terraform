@@ -1,12 +1,10 @@
+# ================================================================
+# Tools
+# ================================================================
 [tools]
-# YAML
-uv = "latest" # for install yamllint
 
 # Markdown
 markdownlint-cli2 = "latest"
-
-# JSON
-biome = "latest"
 
 # GitHub Actions
 actionlint = "latest"
@@ -17,3 +15,120 @@ lefthook = "latest"
 
 # Terraform
 terraform = "latest"
+
+# ================================================================
+# Tasks
+# See: https://mise.jdx.dev/tasks/toml-tasks.html
+# ================================================================
+
+# Global
+[tasks.setup]
+description = "Setup tools"
+run = ["mise trust -yq", "mise install"]
+alias = "s"
+
+[tasks.fix]
+description = "Fix all issues"
+depends = ["md-fix", "tf-fix"]
+alias = "f"
+
+[tasks.check]
+description = "Check for all issues"
+depends = ["md-check", "gh-check", "tf-check"]
+alias = "c"
+
+[tasks.fix-and-check]
+run = [{ task = "fix" }, { task = "check" }]
+description = "Fix all issues and check for issues"
+alias = "fc"
+
+# Markdown
+[tasks.md-fix]
+description = "Fix Markdown issues"
+run = "markdownlint-cli2 . --fix"
+alias = "mf"
+
+[tasks.md-check]
+description = "Check for Markdown issues"
+run = "markdownlint-cli2 ."
+alias = "mc"
+
+# GitHub Actions
+[tasks.gh-check]
+description = "Check GitHub Actions workflows"
+run = "actionlint .github/workflows/*.yml"
+alias = "ghc"
+
+# Terraform
+[tasks.tf-init]
+description = "Initialize Terraform"
+run = "terraform init"
+dir = "terraform"
+alias = "tfi"
+
+[tasks.tf-init-nobackend]
+description = "Initialize Terraform without backend"
+run = "terraform init -backend=false"
+dir = "terraform"
+
+[tasks.tf-init-upgrade]
+description = "Initialize Terraform with provider upgrade"
+run = "terraform init -upgrade"
+dir = "terraform"
+
+[tasks.tf-plan]
+description = "Plan Terraform changes"
+run = "terraform plan"
+dir = "terraform"
+alias = "tfp"
+
+[tasks.tf-apply]
+description = "Apply Terraform changes"
+run = "terraform apply -auto-approve"
+dir = "terraform"
+alias = "tfa"
+
+[tasks.tf-destroy]
+description = "Destroy Terraform infrastructure"
+run = "terraform destroy"
+dir = "terraform"
+
+[tasks.tf-fix]
+description = "Format Terraform files"
+run = "terraform fmt -recursive"
+dir = "terraform"
+
+[tasks.tf-check]
+description = "Check Terraform configuration"
+run = ["terraform validate", "terraform fmt -check -recursive"]
+dir = "terraform"
+
+[tasks.tf-workspace]
+description = "Show current workspace"
+run = "terraform workspace show"
+dir = "terraform"
+
+[tasks.tf-output]
+description = "Show Terraform outputs"
+run = "terraform output"
+dir = "terraform"
+
+[tasks.tf-state]
+description = "Show Terraform state"
+run = "terraform state list"
+dir = "terraform"
+
+[tasks.tf-import-repo]
+description = "Import existing repository"
+run = "terraform import 'github_repository.repositories[\"{{arg()}}\"]' {{arg()}}"
+dir = "terraform"
+
+[tasks.tf-exclude-repo]
+description = "Exclude a repository from management"
+run = [
+  "terraform state rm 'github_repository.repositories[\"{{arg()}}\"]'",
+  "terraform state rm 'github_repository_ruleset.main_branch_protection[\"{{arg()}}\"]'",
+  "terraform state rm 'github_workflow_repository_permissions.workflow_repository_permissions[\"{{arg()}}\"]'",
+  "terraform state rm 'github_actions_repository_permissions.actions_repository_permissions[\"{{arg()}}\"]'",
+]
+dir = "terraform"
