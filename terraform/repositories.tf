@@ -196,6 +196,12 @@ locals {
       auto_init   = false
     }
 
+    "notes" = {
+      description = "Knowledge base and notes"
+      topics      = ["markdown", "notes"]
+      auto_init   = false
+    }
+
     "vscode-snippets" = {
       description = "My snippets for Visual Studio Code"
       topics      = ["vscode", "snippets"]
