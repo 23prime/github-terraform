@@ -58,6 +58,12 @@ locals {
       auto_init   = false
     }
 
+    "actix-onion-template" = {
+      description = "Onion Architecture for Rust / Actix Web"
+      topics      = ["rust", "actix-web", "onion-architecture", "template"]
+      auto_init   = false
+    }
+
     "agent-skills" = {
       auto_init = false
     }
