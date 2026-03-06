@@ -74,6 +74,11 @@ locals {
       auto_init   = false
     }
 
+    "backlog-cli" = {
+      description = "An unofficial CLI tool for Backlog"
+      auto_init   = false
+    }
+
     "claude-config" = {
       description              = ""
       topics                   = []
