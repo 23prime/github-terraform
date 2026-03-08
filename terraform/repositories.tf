@@ -75,7 +75,8 @@ locals {
     }
 
     "backlog-cli" = {
-      description = "An unofficial CLI tool for Backlog"
+      description = "An unofficial CLI tool for Nulab's Backlog"
+      topics      = ["cli", "rust", "nulab", "backlog"]
       auto_init   = false
     }
 
