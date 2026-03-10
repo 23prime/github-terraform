@@ -75,9 +75,10 @@ locals {
     }
 
     "backlog-cli" = {
-      description = "An unofficial CLI tool for Nulab's Backlog"
-      topics      = ["cli", "rust", "nulab", "backlog"]
-      auto_init   = false
+      description  = "An unofficial CLI tool for Nulab's Backlog"
+      homepage_url = "https://23prime.github.io/backlog-cli/"
+      topics       = ["cli", "rust", "nulab", "backlog"]
+      auto_init    = false
     }
 
     "claude-config" = {
