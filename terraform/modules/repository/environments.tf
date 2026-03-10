@@ -4,8 +4,4 @@ resource "github_repository_environment" "github_pages" {
   environment = "github-pages"
   repository  = github_repository.this.name
 
-  deployment_branch_policy {
-    protected_branches     = false
-    custom_branch_policies = false
-  }
 }
