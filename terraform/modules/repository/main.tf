@@ -27,6 +27,14 @@ resource "github_repository" "this" {
   gitignore_template = lookup(var.config, "gitignore_template", var.gitignore_template)
   license_template   = lookup(var.config, "license_template", var.license_template)
 
+  dynamic "pages" {
+    for_each = lookup(var.config, "pages", null) != null ? [lookup(var.config, "pages", {})] : []
+
+    content {
+      build_type = lookup(pages.value, "build_type", "workflow")
+    }
+  }
+
   lifecycle {
     ignore_changes = [allow_forking]
   }

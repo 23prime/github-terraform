@@ -79,6 +79,9 @@ locals {
       homepage_url = "https://23prime.github.io/backlog-cli/"
       topics       = ["cli", "rust", "nulab", "backlog"]
       auto_init    = false
+      pages = {
+        build_type = "workflow"
+      }
     }
 
     "claude-config" = {
