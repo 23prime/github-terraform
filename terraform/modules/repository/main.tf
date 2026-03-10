@@ -28,10 +28,10 @@ resource "github_repository" "this" {
   license_template   = lookup(var.config, "license_template", var.license_template)
 
   dynamic "pages" {
-    for_each = lookup(var.config, "pages", null) != null ? [lookup(var.config, "pages", {})] : []
+    for_each = lookup(var.config, "enable_pages", false) ? [1] : []
 
     content {
-      build_type = lookup(pages.value, "build_type", "workflow")
+      build_type = "workflow"
     }
   }
 
