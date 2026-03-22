@@ -88,6 +88,12 @@ variable "vulnerability_alerts" {
   default     = true
 }
 
+variable "enable_dependabot_security_updates" {
+  description = "Enable Dependabot security updates by default"
+  type        = bool
+  default     = true
+}
+
 # Auto-initialize
 variable "auto_init" {
   description = "Auto-initialize repositories by default"

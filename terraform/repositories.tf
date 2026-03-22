@@ -275,7 +275,8 @@ module "repository" {
   allow_auto_merge       = var.allow_auto_merge
 
   # Security
-  vulnerability_alerts = var.vulnerability_alerts
+  vulnerability_alerts               = var.vulnerability_alerts
+  enable_dependabot_security_updates = var.enable_dependabot_security_updates
 
   # Auto-initialize
   auto_init          = var.auto_init

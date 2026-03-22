@@ -39,3 +39,8 @@ resource "github_repository" "this" {
     ignore_changes = [allow_forking]
   }
 }
+
+resource "github_repository_dependabot_security_updates" "this" {
+  repository = github_repository.this.name
+  enabled    = lookup(var.config, "enable_dependabot_security_updates", var.enable_dependabot_security_updates)
+}
