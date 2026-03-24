@@ -12,10 +12,25 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(mise run tf-init:*)",
-      "Bash(mise run tf-check:*)",
-      "Bash(mise run tf-plan:*)"
+      "Bash(mise run:*)"
     ],
-    "ask": ["Bash(mise run tf-apply:*)"]
+    "ask": [
+      "Bash(mise run tf-apply:*)",
+      "Bash(mise tf-apply:*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mise run fix 2>&1 || true",
+            "statusMessage": "Running fix..."
+          }
+        ]
+      }
+    ]
   }
 }
