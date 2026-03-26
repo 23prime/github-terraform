@@ -21,7 +21,7 @@ resource "github_repository" "this" {
   allow_auto_merge       = lookup(var.config, "allow_auto_merge", var.allow_auto_merge)
 
   # Security
-  vulnerability_alerts = lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
+  vulnerability_alerts = lookup(var.config, "archived", false) ? false : lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
 
   # Auto-initialize (only for new repositories)
   auto_init          = lookup(var.config, "auto_init", var.auto_init)
