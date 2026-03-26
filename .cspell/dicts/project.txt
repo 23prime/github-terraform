@@ -13,4 +13,11 @@ tfvars
 tsukuba
 zism
 actix
+gakuryoku
 nulab
+nuxt
+saiten
+seaorm
+shuryo
+sympy
+yesod

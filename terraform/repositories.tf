@@ -72,6 +72,7 @@ locals {
       description = "AWS Lambda functions by Rust and Terraform."
       topics      = ["aws", "lambda", "rust", "terraform", "docker"]
       auto_init   = false
+      archived    = true
     }
 
     "backlog-cli" = {
@@ -94,6 +95,7 @@ locals {
       description = "Copier template for general projects."
       topics      = ["copier", "template"]
       auto_init   = false
+      archived    = true
     }
 
     "dot-config" = {
@@ -148,12 +150,14 @@ locals {
       description = ""
       topics      = []
       auto_init   = false
+      archived    = true
     }
 
     "mikutter_keyword_mute" = {
       description = "keyword-mute plugin for mikutter"
       topics      = ["ruby", "mikutter", "mikutter-plugin"]
       auto_init   = false
+      archived    = true
     }
 
     "oeis2" = {
@@ -166,6 +170,7 @@ locals {
       description = ""
       topics      = ["latex-template", "latex"]
       auto_init   = false
+      archived    = true
     }
 
     "proxy-terraform" = {
@@ -178,6 +183,7 @@ locals {
       description = "Shell Scripts."
       topics      = ["shell", "shell-script"]
       auto_init   = false
+      archived    = true
     }
 
     "shell-scripts" = {
@@ -226,12 +232,14 @@ locals {
       description = ""
       topics      = []
       auto_init   = false
+      archived    = true
     }
 
     "youtube-open-stream-thumbnail-vue" = {
       description = ""
       topics      = []
       auto_init   = false
+      archived    = true
     }
 
     "zed-config" = {
@@ -250,6 +258,232 @@ locals {
       description = "A tool to check section numbers in Markdown files"
       topics      = ["markdown", "documentation", "tool"]
       auto_init   = false
+    }
+
+    # Archived repositories
+
+    "23prime-api" = {
+      description            = "Backend Web API for 23prime-page"
+      homepage_url           = "https://github.com/23prime/23prime-page"
+      topics                 = ["rust", "actix", "actix-web", "seaorm", "docker"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "23prime-page" = {
+      description            = "My web site."
+      homepage_url           = "https://23prime.xyz"
+      topics                 = ["nuxt", "vue", "auth0", "openid-connect"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "PRS" = {
+      description            = "Calculate PRS"
+      homepage_url           = ""
+      topics                 = ["prs", "python3", "sympy"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "aws-lambda-functions" = {
+      description            = "AWS Lambda Functions."
+      homepage_url           = ""
+      topics                 = ["aws", "aws-lambda", "ruby", "aws-lambda-func"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "completion-judgment" = {
+      description            = "Completion Judgment Machine"
+      homepage_url           = ""
+      topics                 = ["rust"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "db-csv" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = []
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "diet" = {
+      description            = "Let's diet!"
+      homepage_url           = ""
+      topics                 = ["python", "python3"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "diet-tweet" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = ["haskell", "twitter", "oauth"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "follow-list" = {
+      description            = "Fit follow list to follow."
+      homepage_url           = ""
+      topics                 = ["rust", "twitter"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "gakuryoku-saiten" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = ["haskell", "stack", "csv"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "json-tools" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = []
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "linear-algebra-rust" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = ["rust", "linear-algebra", "matrix"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "okkey-room" = {
+      description            = ""
+      homepage_url           = "https://23prime.github.io/okkey-room/"
+      topics                 = ["markdown", "homepage"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "py-math" = {
+      description            = ""
+      homepage_url           = ""
+      topics                 = []
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "shuryo-judge" = {
+      description            = "Judge whether you can shuryo or not."
+      homepage_url           = "https://shuryo-judge.herokuapp.com/"
+      topics                 = ["haskell", "yesod"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
+    }
+
+    "sos-page" = {
+      description            = "Official website of high school girl band \"Stream of Semen\" "
+      homepage_url           = "https://sos-pages.herokuapp.com/"
+      topics                 = ["rust", "rocket"]
+      auto_init              = false
+      allow_squash_merge     = true
+      allow_rebase_merge     = true
+      allow_auto_merge       = false
+      delete_branch_on_merge = false
+      has_projects           = true
+      has_wiki               = true
+      archived               = true
     }
   }
 }
