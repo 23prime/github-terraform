@@ -104,6 +104,11 @@ locals {
       topics      = ["haskell", "elliptic-curves", "ellipse", "algebra"]
     }
 
+    "gh-check-unpinned" = {
+      description = "This GitHub CLI extension detects the use of actions in the workflow of repositories under a specific owner (user or organization) that are not SHA-pinned."
+      topics      = ["go", "github-cli"]
+    }
+
     "gh-download" = {
       description = ""
       topics      = []
