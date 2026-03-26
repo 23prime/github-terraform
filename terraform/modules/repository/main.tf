@@ -37,7 +37,7 @@ resource "github_repository" "this" {
   }
 
   lifecycle {
-    ignore_changes = [allow_forking]
+    ignore_changes = [allow_forking, is_template, auto_init, gitignore_template, license_template]
   }
 }
 
