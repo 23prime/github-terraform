@@ -274,18 +274,6 @@ locals {
       archived               = true
     }
 
-    "completion-judgment" = {
-      description            = "Completion Judgment Machine"
-      homepage_url           = ""
-      topics                 = ["rust"]
-      allow_squash_merge     = true
-      allow_rebase_merge     = true
-      allow_auto_merge       = false
-      delete_branch_on_merge = false
-      has_projects           = true
-      has_wiki               = true
-      archived               = true
-    }
 
     "db-csv" = {
       description            = ""
@@ -365,18 +353,6 @@ locals {
       archived               = true
     }
 
-    "linear-algebra-rust" = {
-      description            = ""
-      homepage_url           = ""
-      topics                 = ["rust", "linear-algebra", "matrix"]
-      allow_squash_merge     = true
-      allow_rebase_merge     = true
-      allow_auto_merge       = false
-      delete_branch_on_merge = false
-      has_projects           = true
-      has_wiki               = true
-      archived               = true
-    }
 
     "okkey-room" = {
       description            = ""
@@ -417,18 +393,6 @@ locals {
       archived               = true
     }
 
-    "sos-page" = {
-      description            = "Official website of high school girl band \"Stream of Semen\" "
-      homepage_url           = "https://sos-pages.herokuapp.com/"
-      topics                 = ["rust", "rocket"]
-      allow_squash_merge     = true
-      allow_rebase_merge     = true
-      allow_auto_merge       = false
-      delete_branch_on_merge = false
-      has_projects           = true
-      has_wiki               = true
-      archived               = true
-    }
   }
 }
 
