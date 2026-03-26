@@ -1,5 +1,5 @@
 resource "github_repository_ruleset" "main_branch_protection" {
-  count = lookup(var.config, "enable_branch_protection", var.enable_branch_protection) ? 1 : 0
+  count = lookup(var.config, "enable_branch_protection", var.enable_branch_protection) && !lookup(var.config, "archived", false) ? 1 : 0
 
   name        = "main-branch-protection"
   repository  = github_repository.this.name

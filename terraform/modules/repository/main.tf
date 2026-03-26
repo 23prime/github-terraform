@@ -4,6 +4,7 @@ resource "github_repository" "this" {
   visibility   = lookup(var.config, "visibility", var.visibility)
   homepage_url = lookup(var.config, "homepage_url", "https://github.com/${var.github_owner}/${var.name}")
   topics       = lookup(var.config, "topics", [])
+  archived     = lookup(var.config, "archived", false)
 
   # Repository features
   has_issues      = lookup(var.config, "has_issues", var.enable_issues)
@@ -20,7 +21,7 @@ resource "github_repository" "this" {
   allow_auto_merge       = lookup(var.config, "allow_auto_merge", var.allow_auto_merge)
 
   # Security
-  vulnerability_alerts = lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
+  vulnerability_alerts = lookup(var.config, "archived", false) ? false : lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
 
   # Auto-initialize (only for new repositories)
   auto_init          = lookup(var.config, "auto_init", var.auto_init)
@@ -41,6 +42,8 @@ resource "github_repository" "this" {
 }
 
 resource "github_repository_dependabot_security_updates" "this" {
+  count = lookup(var.config, "archived", false) ? 0 : 1
+
   repository = github_repository.this.name
   enabled    = lookup(var.config, "enable_dependabot_security_updates", var.enable_dependabot_security_updates)
 }
