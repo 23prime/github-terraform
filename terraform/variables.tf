@@ -98,7 +98,7 @@ variable "enable_dependabot_security_updates" {
 variable "auto_init" {
   description = "Auto-initialize repositories by default"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "gitignore_template" {
