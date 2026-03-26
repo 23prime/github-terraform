@@ -102,6 +102,11 @@ run = "terraform apply -auto-approve"
 dir = "terraform"
 alias = "tfa"
 
+[tasks.tf-apply-ask]
+description = "Apply Terraform changes with confirmation prompt"
+run = "terraform apply"
+dir = "terraform"
+
 [tasks.tf-destroy]
 description = "Destroy Terraform infrastructure"
 run = "terraform destroy"
