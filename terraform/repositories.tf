@@ -225,6 +225,11 @@ locals {
       topics      = ["markdown", "documentation", "tool"]
     }
 
+    "mdsn" = {
+      description = "Markdown section numbers checker"
+      topics      = ["markdown", "cli", "rust"]
+    }
+
     # Archived repositories
 
     "23prime-api" = {
