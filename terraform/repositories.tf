@@ -223,6 +223,7 @@ locals {
     "md-section-numbers-checker" = {
       description = "A tool to check section numbers in Markdown files"
       topics      = ["markdown", "documentation", "tool"]
+      archived    = true
     }
 
     "mdsn" = {
