@@ -33,6 +33,17 @@ jobs:
           cache: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Debug terraform install
+        run: |
+          echo "=== mise which terraform ==="
+          mise which terraform || true
+          echo "=== ls install dir ==="
+          ls -la ~/.local/share/mise/installs/terraform/ || true
+          ls -la ~/.local/share/mise/installs/terraform/1.14.8/ || true
+          ls -la ~/.local/share/mise/installs/terraform/1.14.8/bin/ || true
+          echo "=== cat bin/terraform ==="
+          cat ~/.local/share/mise/installs/terraform/1.14.8/bin/terraform || true
+
       - name: Initialize Terraform (without backend)
         run: mise exec -- terraform init -backend=false
         working-directory: terraform
