@@ -188,6 +188,11 @@ locals {
       topics      = []
     }
 
+    "mise-upgrade-action" = {
+      description = "A GitHub Action to automatically upgrade mise-managed tools"
+      topics      = ["github-actions", "mise", "automation", "upgrade"]
+    }
+
     "notes" = {
       description = "Knowledge base and notes"
       topics      = ["markdown", "notes"]
