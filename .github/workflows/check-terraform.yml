@@ -34,11 +34,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Initialize Terraform (without backend)
-        run: terraform init -backend=false
+        run: mise exec -- terraform init -backend=false
         working-directory: terraform
 
       - name: Format Terraform
-        run: terraform fmt -recursive
+        run: mise exec -- terraform fmt -recursive
         working-directory: terraform
 
       - name: Commit and Push
@@ -47,5 +47,5 @@ jobs:
           commit_message: "Auto fix by workflow"
 
       - name: Check Terraform
-        run: terraform validate && terraform fmt -check -recursive
+        run: mise exec -- terraform validate && mise exec -- terraform fmt -check -recursive
         working-directory: terraform
