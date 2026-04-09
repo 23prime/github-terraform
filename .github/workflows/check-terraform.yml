@@ -33,14 +33,13 @@ jobs:
           cache: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Reshim
-        run: mise reshim
-
       - name: Initialize Terraform (without backend)
-        run: mise run tf-init-nobackend
+        run: terraform init -backend=false
+        working-directory: terraform
 
       - name: Format Terraform
-        run: mise run tf-fix
+        run: terraform fmt -recursive
+        working-directory: terraform
 
       - name: Commit and Push
         uses: stefanzweifel/git-auto-commit-action@04702edda442b2e678b25b537cec683a1493fcb9 # v7.1.0
@@ -48,4 +47,5 @@ jobs:
           commit_message: "Auto fix by workflow"
 
       - name: Check Terraform
-        run: mise run tf-check
+        run: terraform validate && terraform fmt -check -recursive
+        working-directory: terraform
