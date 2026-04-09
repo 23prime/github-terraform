@@ -33,6 +33,12 @@ jobs:
           cache: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Fix terraform bin path
+        run: |
+          INSTALL_DIR=$(find ~/.local/share/mise/installs/terraform -maxdepth 1 -mindepth 1 -type d | head -1)
+          mkdir -p "${INSTALL_DIR}/bin"
+          ln -sf "${INSTALL_DIR}/terraform" "${INSTALL_DIR}/bin/terraform"
+
       - name: Initialize Terraform (without backend)
         run: mise run tf-init-nobackend
 
