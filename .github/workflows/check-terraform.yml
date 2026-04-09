@@ -30,6 +30,7 @@ jobs:
         with:
           install: true
           install_args: "terraform"
+          reshim: true
           cache: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 

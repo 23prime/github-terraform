@@ -17,6 +17,7 @@ actix
 gakuryoku
 nulab
 nuxt
+reshim
 saiten
 seaorm
 shuryo
