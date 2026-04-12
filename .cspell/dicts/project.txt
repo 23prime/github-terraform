@@ -12,6 +12,7 @@ tfstate
 tfvars
 tsukuba
 mdsn
+zenn
 zism
 actix
 gakuryoku

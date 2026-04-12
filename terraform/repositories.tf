@@ -220,6 +220,11 @@ locals {
       topics      = []
     }
 
+    "zenn-contents" = {
+      description = "Content management repository for Zenn"
+      topics      = ["zenn"]
+    }
+
     "zism" = {
       description = "Zellij Interactive Session Manager"
       topics      = ["zellij", "rust"]
