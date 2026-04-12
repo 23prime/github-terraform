@@ -221,8 +221,9 @@ locals {
     }
 
     "zenn-contents" = {
-      description = "Content management repository for Zenn"
-      topics      = ["zenn"]
+      description  = "Content management repository for Zenn"
+      homepage_url = "https://zenn.dev/23prime"
+      topics       = ["zenn"]
     }
 
     "zism" = {
