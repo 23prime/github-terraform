@@ -18,7 +18,8 @@
     ],
     "ask": [
       "Bash(mise run tf-apply:*)",
-      "Bash(mise tf-apply:*)"
+      "Bash(mise tf-apply:*)",
+      "Read(*.tfvars)"
     ]
   },
   "hooks": {
