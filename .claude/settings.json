@@ -18,7 +18,9 @@
     ],
     "ask": [
       "Bash(mise run tf-apply:*)",
-      "Bash(mise tf-apply:*)",
+      "Bash(mise tf-apply:*)"
+    ],
+    "deny": [
       "Read(*.tfvars)"
     ]
   },
