@@ -186,3 +186,16 @@ variable "can_approve_pull_request_reviews" {
   type        = bool
   default     = true
 }
+
+# token-generation environment secrets
+variable "token_generation_app_id" {
+  description = "APP_ID secret for token-generation environment"
+  type        = string
+  sensitive   = true
+}
+
+variable "token_generation_app_private_key" {
+  description = "APP_PRIVATE_KEY secret for token-generation environment"
+  type        = string
+  sensitive   = true
+}

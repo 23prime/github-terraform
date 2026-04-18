@@ -21,3 +21,10 @@ allow_merge_commit     = true
 allow_rebase_merge     = false
 allow_update_branch    = true
 allow_auto_merge       = true
+
+# token-generation environment secrets
+# Replace these placeholders before applying Terraform. Do not leave them blank.
+token_generation_app_id          = "REPLACE_WITH_YOUR_GITHUB_APP_ID"
+token_generation_app_private_key = <<-EOT
+  REPLACE_WITH_YOUR_GITHUB_APP_PRIVATE_KEY
+EOT
