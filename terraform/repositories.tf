@@ -3,10 +3,9 @@ locals {
   # Define repositories with their specific configurations
   repositories = {
     "github-terraform" = {
-      description                 = "Manage GitHub repositories with Terraform"
-      topics                      = ["terraform", "github", "automation"],
-      enable_branch_protection    = true
-      enable_token_generation_env = true
+      description              = "Manage GitHub repositories with Terraform"
+      topics                   = ["terraform", "github", "automation"],
+      enable_branch_protection = true
     },
 
     "23prime" = {
@@ -15,9 +14,8 @@ locals {
     },
 
     "oeis-mcp-server-rs" = {
-      description                 = "Rust implementation of the OEIS MCP server"
-      topics                      = ["rust", "oeis", "mcp"],
-      enable_token_generation_env = true
+      description = "Rust implementation of the OEIS MCP server"
+      topics      = ["rust", "oeis", "mcp"],
     }
 
     "23prime.xyz" = {
@@ -43,9 +41,8 @@ locals {
     }
 
     "claude-launcher" = {
-      description                 = "Launcher for Claude Code"
-      topics                      = ["cli", "ai", "claude"]
-      enable_token_generation_env = true
+      description = "Launcher for Claude Code"
+      topics      = ["cli", "ai", "claude"]
     }
 
     ".emacs.d" = {
@@ -54,9 +51,8 @@ locals {
     }
 
     "actix-onion-template" = {
-      description                 = "Onion Architecture for Rust / Actix Web"
-      topics                      = ["rust", "actix-web", "onion-architecture", "template"]
-      enable_token_generation_env = true
+      description = "Onion Architecture for Rust / Actix Web"
+      topics      = ["rust", "actix-web", "onion-architecture", "template"]
     }
 
     "agent-skills" = {
@@ -69,11 +65,10 @@ locals {
     }
 
     "backlog-cli" = {
-      description                 = "An unofficial CLI tool for Nulab's Backlog"
-      homepage_url                = "https://23prime.github.io/backlog-cli/"
-      topics                      = ["cli", "rust", "nulab", "backlog"]
-      enable_pages                = true
-      enable_token_generation_env = true
+      description  = "An unofficial CLI tool for Nulab's Backlog"
+      homepage_url = "https://23prime.github.io/backlog-cli/"
+      topics       = ["cli", "rust", "nulab", "backlog"]
+      enable_pages = true
     }
 
     "claude-config" = {
@@ -110,9 +105,8 @@ locals {
     }
 
     "gh-check-unpinned" = {
-      description                 = "This GitHub CLI extension detects the use of actions in the workflow of repositories under a specific owner (user or organization) that are not SHA-pinned."
-      topics                      = ["go", "github-cli"]
-      enable_token_generation_env = true
+      description = "This GitHub CLI extension detects the use of actions in the workflow of repositories under a specific owner (user or organization) that are not SHA-pinned."
+      topics      = ["go", "github-cli"]
     }
 
     "gh-download" = {
@@ -185,28 +179,24 @@ locals {
     }
 
     "sync-upstream" = {
-      description                 = ""
-      topics                      = []
-      enable_token_generation_env = true
+      description = ""
+      topics      = []
     }
 
     "mise-template" = {
-      description                 = ""
-      topics                      = []
-      enable_token_generation_env = true
+      description = ""
+      topics      = []
     }
 
     "mise-upgrade-action" = {
-      description                 = "A GitHub Action to automatically upgrade mise-managed tools"
-      topics                      = ["github-actions", "mise", "automation", "upgrade"]
-      enable_token_generation_env = true
-      archived                    = true
+      description = "A GitHub Action to automatically upgrade mise-managed tools"
+      topics      = ["github-actions", "mise", "automation", "upgrade"]
+      archived    = true
     }
 
     "notes" = {
-      description                 = "Knowledge base and notes"
-      topics                      = ["markdown", "notes"]
-      enable_token_generation_env = true
+      description = "Knowledge base and notes"
+      topics      = ["markdown", "notes"]
     }
 
     "vscode-snippets" = {
@@ -232,16 +222,14 @@ locals {
     }
 
     "zenn-contents" = {
-      description                 = "Content management repository for Zenn"
-      homepage_url                = "https://zenn.dev/23prime"
-      topics                      = ["zenn"]
-      enable_token_generation_env = true
+      description  = "Content management repository for Zenn"
+      homepage_url = "https://zenn.dev/23prime"
+      topics       = ["zenn"]
     }
 
     "zism" = {
-      description                 = "Zellij Interactive Session Manager"
-      topics                      = ["zellij", "rust"]
-      enable_token_generation_env = true
+      description = "Zellij Interactive Session Manager"
+      topics      = ["zellij", "rust"]
     }
 
     "md-section-numbers-checker" = {
@@ -251,9 +239,8 @@ locals {
     }
 
     "mdsn" = {
-      description                 = "Markdown section numbers checker"
-      topics                      = ["markdown", "cli", "rust"]
-      enable_token_generation_env = true
+      description = "Markdown section numbers checker"
+      topics      = ["markdown", "cli", "rust"]
     }
 
     # Archived repositories
@@ -477,7 +464,4 @@ module "repository" {
   default_workflow_permissions     = var.default_workflow_permissions
   can_approve_pull_request_reviews = var.can_approve_pull_request_reviews
 
-  # token-generation environment secrets
-  token_generation_app_id          = var.token_generation_app_id
-  token_generation_app_private_key = var.token_generation_app_private_key
 }
