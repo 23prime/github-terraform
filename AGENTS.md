@@ -11,6 +11,10 @@ This file provides guidance to AI coding agents when working with code in this r
 - Always use `rm -f` (never bare `rm`)
 - Before running a series of `git` commands, confirm you are in the project root; if not, `cd` there first. Then run all subsequent `git` commands from that directory without the `-C` option.
 
+### Terraform Rules
+
+- Before committing any changes to Terraform files (including refactoring), always run `mise run tf-plan` to verify the diff.
+
 ## Project Overview
 
 This is a GitHub Terraform configuration management repository that uses Infrastructure as Code (IaC) to manage GitHub repositories, settings, and configurations. The project uses mise for both tool management and task running, and Terraform Cloud for state management.
