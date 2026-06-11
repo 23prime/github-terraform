@@ -200,6 +200,7 @@ locals {
       description                 = "A GitHub Action to automatically upgrade mise-managed tools"
       topics                      = ["github-actions", "mise", "automation", "upgrade"]
       enable_token_generation_env = true
+      archived                    = true
     }
 
     "notes" = {
