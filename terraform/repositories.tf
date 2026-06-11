@@ -463,5 +463,6 @@ module "repository" {
   allowed_actions                  = var.allowed_actions
   default_workflow_permissions     = var.default_workflow_permissions
   can_approve_pull_request_reviews = var.can_approve_pull_request_reviews
+  sha_pinning_required             = var.sha_pinning_required
 
 }

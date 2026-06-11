@@ -186,3 +186,9 @@ variable "can_approve_pull_request_reviews" {
   type        = bool
   default     = true
 }
+
+variable "sha_pinning_required" {
+  description = "Require SHA pinning for all actions and reusable workflows by default"
+  type        = bool
+  default     = true
+}

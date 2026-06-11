@@ -156,3 +156,8 @@ variable "can_approve_pull_request_reviews" {
   description = "Can approve pull request reviews by default"
   type        = bool
 }
+
+variable "sha_pinning_required" {
+  description = "Require SHA pinning for all actions and reusable workflows by default"
+  type        = bool
+}

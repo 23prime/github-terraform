@@ -3,8 +3,9 @@
 resource "github_actions_repository_permissions" "this" {
   count = lookup(var.config, "archived", false) ? 0 : 1
 
-  repository      = github_repository.this.name
-  allowed_actions = lookup(var.config, "allowed_actions", var.allowed_actions)
+  repository           = github_repository.this.name
+  allowed_actions      = lookup(var.config, "allowed_actions", var.allowed_actions)
+  sha_pinning_required = lookup(var.config, "sha_pinning_required", var.sha_pinning_required)
 }
 
 resource "github_workflow_repository_permissions" "this" {
