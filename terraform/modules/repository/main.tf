@@ -20,9 +20,6 @@ resource "github_repository" "this" {
   allow_update_branch    = lookup(var.config, "allow_update_branch", var.allow_update_branch)
   allow_auto_merge       = lookup(var.config, "allow_auto_merge", var.allow_auto_merge)
 
-  # Security
-  vulnerability_alerts = lookup(var.config, "archived", false) ? false : lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
-
   # Auto-initialize (only for new repositories)
   auto_init          = lookup(var.config, "auto_init", var.auto_init)
   gitignore_template = lookup(var.config, "gitignore_template", var.gitignore_template)
@@ -39,6 +36,13 @@ resource "github_repository" "this" {
   lifecycle {
     ignore_changes = [allow_forking, is_template, auto_init, gitignore_template, license_template]
   }
+}
+
+resource "github_repository_vulnerability_alerts" "this" {
+  count = lookup(var.config, "archived", false) ? 0 : 1
+
+  repository = github_repository.this.name
+  enabled    = lookup(var.config, "vulnerability_alerts", var.vulnerability_alerts)
 }
 
 resource "github_repository_dependabot_security_updates" "this" {
