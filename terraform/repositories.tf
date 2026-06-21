@@ -112,6 +112,7 @@ locals {
     "gh-download" = {
       description = ""
       topics      = []
+      archived    = true
     }
 
     "git-config" = {
