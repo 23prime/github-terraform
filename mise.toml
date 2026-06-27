@@ -24,7 +24,7 @@ zizmor = "1.26.1"
 
 # Git
 lefthook = "2"
-gitleaks = "8"
+betterleaks = "1"
 
 # Terraform
 terraform = "1"
@@ -50,7 +50,13 @@ alias = "f"
 
 [tasks.check]
 description = "Check for all issues"
-depends = ["md-check", "gh-check", "spell-check", "tf-check", "gitleaks-check"]
+depends = [
+  "md-check",
+  "gh-check",
+  "spell-check",
+  "secret-check-all",
+  "tf-check",
+]
 alias = "c"
 
 [tasks.fix-and-check]
@@ -175,12 +181,12 @@ run = "terraform state mv 'module.repository[\"{{arg(i=0, name=\"old\")}}\"]' 'm
 dir = "terraform"
 
 # Secrets
-[tasks.gitleaks-check]
-description = "Check for leaked secrets"
-run = "gitleaks git --redact --no-banner"
-alias = "glc"
-
-[tasks.gitleaks-protect]
+[tasks.secret-check]
 description = "Check staged files for leaked secrets"
-run = "gitleaks git --pre-commit --redact --no-banner"
+run = "betterleaks git --pre-commit --redact --no-banner"
 alias = "glp"
+
+[tasks.secret-check-all]
+description = "Check for leaked secrets"
+run = "betterleaks git --redact --no-banner"
+alias = "glc"
