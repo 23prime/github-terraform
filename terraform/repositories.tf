@@ -50,7 +50,7 @@ locals {
       topics      = ["emacs", "emacs-lisp"]
     }
 
-    "actix-onion-template" = {
+    "web-app-template" = {
       description = "Onion Architecture for Rust / Actix Web"
       topics      = ["rust", "actix-web", "onion-architecture", "template"]
     }
