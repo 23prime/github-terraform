@@ -80,6 +80,40 @@ mise run check
 - **Modify Settings**: Update repository configuration in the same file
 - **Apply Changes**: Run `mise run tf-plan` then `mise run tf-apply`
 
+#### Rename a repository
+
+Because the map key in `terraform/repositories.tf` doubles as the Terraform state key,
+changing only the key causes a destroy + create cycle.
+To rename safely, move the state entry first:
+
+1. Move the state entry to the new name:
+
+   ```bash
+   mise run tf-state-mv-repo old-name new-name
+   ```
+
+2. Update the key in `terraform/repositories.tf`:
+
+   ```hcl
+   # Before
+   "old-name" = { ... }
+
+   # After
+   "new-name" = { ... }
+   ```
+
+3. Verify no destroy/create appears in the plan:
+
+   ```bash
+   mise run tf-plan
+   ```
+
+4. Apply:
+
+   ```bash
+   mise run tf-apply
+   ```
+
 #### Importing Existing Repositories
 
 To manage existing GitHub repositories with Terraform:

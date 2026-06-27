@@ -168,6 +168,12 @@ run = [
   "terraform state rm 'module.repository[\"{{arg()}}\"].github_workflow_repository_permissions.this[0]' || true",
 ]
 dir = "terraform"
+
+[tasks.tf-state-mv-repo]
+description = "Move Terraform state when renaming a repository"
+run = "terraform state mv 'module.repository[\"{{arg(i=0, name=\"old\")}}\"]' 'module.repository[\"{{arg(i=1, name=\"new\")}}\"]'"
+dir = "terraform"
+
 # Secrets
 [tasks.gitleaks-check]
 description = "Check for leaked secrets"
