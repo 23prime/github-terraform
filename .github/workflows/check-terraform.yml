@@ -2,6 +2,8 @@ name: Check Terraform
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "terraform/**/*.tf"
       - "terraform/**/*.tfvars"
