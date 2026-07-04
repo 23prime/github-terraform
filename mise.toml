@@ -27,7 +27,7 @@ lefthook = "2"
 betterleaks = "v1.6.1"
 
 # Terraform
-terraform = "1"
+"aqua:hashicorp/terraform" = "1"
 # Spell Check
 cspell = "10"
 

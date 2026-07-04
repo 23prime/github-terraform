@@ -46,6 +46,10 @@ url = "https://github.com/rhysd/actionlint/releases/download/v1.7.12/actionlint_
 url_api = "https://api.github.com/repos/rhysd/actionlint/releases/assets/384924919"
 provenance = "github-attestations"
 
+[[tools."aqua:hashicorp/terraform"]]
+version = "1.15.7"
+backend = "aqua:hashicorp/terraform"
+
 [[tools.betterleaks]]
 version = "v1.6.1"
 backend = "aqua:betterleaks/betterleaks"
