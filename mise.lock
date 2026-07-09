@@ -249,14 +249,6 @@ checksum = "sha256:8a4e35ab0b331c85d73567b12f2a444df187f483e5079ceffa6bda1faa2e7
 url = "https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.zip"
 url_api = "https://api.github.com/repos/koalaman/shellcheck/releases/assets/279056944"
 
-[[tools.terraform]]
-version = "1.15.4"
-backend = "asdf:terraform"
-
-[tools.terraform."platforms.linux-x64"]
-checksum = "sha256:a71695fa6db9344db02ff1adb69cce891c1b2b4dc31c08df0dd4a12101a33b26"
-url = "https://releases.hashicorp.com/terraform/1.15.4/terraform_1.15.4_linux_amd64.zip"
-
 [[tools.zizmor]]
 version = "1.26.1"
 backend = "aqua:zizmorcore/zizmor"
