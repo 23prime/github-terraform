@@ -107,7 +107,6 @@ locals {
     "fitness-kpi-tracker" = {
       description = "Tracking my fitness KPI."
       topics      = ["android"]
-      auto_init   = true
     }
 
     "gh-check-unpinned" = {
