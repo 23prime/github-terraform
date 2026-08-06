@@ -34,7 +34,7 @@ Show the `"<repo-name>"` entry as currently defined in `terraform/repositories.t
 gh repo view <github-owner>/<repo-name> --json nameWithOwner,visibility,isArchived,pushedAt
 ```
 
-This doubles as the preflight for step 9 — it must succeed and return the intended `nameWithOwner`. If it fails here, the `gh` identity cannot see the repository, so a not-found result after apply would prove nothing. Resolve that before continuing.
+This doubles as the preflight for step 9 — it must succeed and return the intended `nameWithOwner`. If it fails, stop and report the preflight as unverified; without it, a not-found result after apply proves nothing. Read the error before deciding why: a 404 may mean the `gh` identity cannot see a private repository, but authentication, network, and rate-limit errors fail the same way and need different fixes.
 
 Then confirm the user wants the repository deleted from GitHub rather than one of the alternatives above. Wait for explicit confirmation before continuing.
 
