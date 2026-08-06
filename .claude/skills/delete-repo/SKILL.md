@@ -28,7 +28,15 @@ When the user invokes `/delete-repo <repo-name>`, follow these steps:
 
 ### 1. Confirm the deletion
 
-Show the `"<repo-name>"` entry as currently defined in `terraform/repositories.tf`, and confirm the user wants the repository deleted from GitHub rather than one of the alternatives above. Wait for explicit confirmation before continuing.
+Show the `"<repo-name>"` entry as currently defined in `terraform/repositories.tf`, together with the repository as GitHub sees it:
+
+```bash
+gh repo view <github-owner>/<repo-name> --json nameWithOwner,visibility,isArchived,pushedAt
+```
+
+This doubles as the preflight for step 9 — it must succeed and return the intended `nameWithOwner`. If it fails here, the `gh` identity cannot see the repository, so a not-found result after apply would prove nothing. Resolve that before continuing.
+
+Then confirm the user wants the repository deleted from GitHub rather than one of the alternatives above. Wait for explicit confirmation before continuing.
 
 Deletion also requires the `delete_repo` scope on the `GITHUB_TOKEN` stored in the Terraform Cloud workspace. The `repo` scope alone is not enough — apply fails with a permission error at step 8.
 
@@ -134,3 +142,5 @@ A failure alone does not prove deletion — authentication, network, and rate-li
 | `Could not resolve to a Repository with the name ...` | Deleted. Inform the user. |
 | The repository details are printed | Deletion did not complete. Report it. |
 | Any other error | Deletion could not be verified. Report the error, do not claim success. |
+
+The first row holds only because the step 1 preflight succeeded with the same `gh` identity. GitHub answers 404 for private repositories the caller cannot see, so without that preflight the same message would also appear for a repository that was never visible. If step 1 was skipped, report the deletion as unverified.
