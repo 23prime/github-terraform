@@ -121,4 +121,10 @@ Verify the repository is gone:
 gh repo view <github-owner>/<repo-name>
 ```
 
-This should fail with a not-found error. Inform the user that the repository has been deleted.
+A failure alone does not prove deletion — authentication, network, and rate-limit errors also fail. Judge by the message:
+
+| Result | Report |
+| --- | --- |
+| `Could not resolve to a Repository with the name ...` | Deleted. Inform the user. |
+| The repository details are printed | Deletion did not complete. Report it. |
+| Any other error | Deletion could not be verified. Report the error, do not claim success. |
