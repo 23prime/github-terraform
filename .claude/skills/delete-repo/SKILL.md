@@ -60,7 +60,11 @@ mise run tf-init
 mise run tf-plan
 ```
 
-Every destroyed resource must be under `module.repository["<repo-name>"]`:
+Every destroyed resource must be under `module.repository["<repo-name>"]`. Which of the module's resources appear depends on the entry's config, so derive the expected set from the module rather than trusting the table below:
+
+```bash
+rg -n '^resource|^\s*count\s*=' terraform/modules/repository/*.tf
+```
 
 | Resource | Destroyed when |
 | --- | --- |
@@ -70,8 +74,10 @@ Every destroyed resource must be under `module.repository["<repo-name>"]`:
 | `github_repository_ruleset.main_branch_protection[0]` | not archived and branch protection enabled |
 | `github_actions_repository_permissions.this[0]` | not archived |
 | `github_workflow_repository_permissions.this[0]` | not archived |
+| `github_repository_pages.this[0]` | `enable_pages` |
+| `github_repository_environment.github_pages[0]` | `enable_pages` |
 
-Show the plan output to the user. If anything outside that module instance is added, changed, or destroyed, stop and report it instead of continuing.
+Show the plan output to the user. If anything outside that module instance is added, changed, or destroyed, stop and report it instead of continuing. If the table and the module disagree, update the table in this skill.
 
 ### 6. Commit and create PR
 
