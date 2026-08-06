@@ -200,11 +200,6 @@ locals {
       archived    = true
     }
 
-    "notes" = {
-      description = "Knowledge base and notes"
-      topics      = ["markdown", "notes"]
-    }
-
     "vscode-snippets" = {
       description = "My snippets for Visual Studio Code"
       topics      = ["vscode", "snippets"]
