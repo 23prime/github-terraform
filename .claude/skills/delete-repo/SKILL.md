@@ -77,7 +77,13 @@ rg -n '^resource|^\s*count\s*=' terraform/modules/repository/*.tf
 | `github_repository_pages.this[0]` | `enable_pages` |
 | `github_repository_environment.github_pages[0]` | `enable_pages` |
 
-Show the plan output to the user. If anything outside that module instance is added, changed, or destroyed, stop and report it instead of continuing. If the table and the module disagree, update the table in this skill.
+Show the plan output to the user. Removing one entry produces destroys and nothing else, so stop and report instead of continuing if any of these hold:
+
+- `module.repository["<repo-name>"].github_repository.this` is not destroyed — the edit did not take effect, or it hit the wrong entry
+- Anything inside that module instance is added or changed
+- Anything outside that module instance is added, changed, or destroyed
+
+If the table and the module disagree, update the table in this skill.
 
 ### 6. Commit and create PR
 
