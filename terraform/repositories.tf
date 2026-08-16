@@ -79,10 +79,12 @@ locals {
     }
 
     "coding-test-20260817" = {
-      description = ""
-      topics      = []
-      visibility  = "private"
-      auto_init   = true
+      description                        = ""
+      topics                             = []
+      visibility                         = "private"
+      auto_init                          = true
+      enable_branch_protection           = false
+      enable_dependabot_security_updates = false
     }
 
     "copier-template" = {
