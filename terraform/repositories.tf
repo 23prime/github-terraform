@@ -83,6 +83,7 @@ locals {
       topics                             = []
       visibility                         = "private"
       auto_init                          = true
+      archived                           = true
       enable_branch_protection           = false
       enable_dependabot_security_updates = false
     }
